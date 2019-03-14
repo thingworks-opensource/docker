@@ -12,7 +12,7 @@ ENV HBASE_OPTS "-XX:+UseConcMarkSweepGC -XX:+UnlockExperimentalVMOptions -XX:+Us
 ENV JVMARGS "-XX:+UseConcMarkSweepGC -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -enableassertions -enablesystemassertions"
 
 # Tini is a tiny init that helps when a container is being culled to stop things nicely
-ADD https://github.com/thingworks-opensource/tini/releases/download/${TINI_VERSION}/tini-static-amd64 /tini
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-static-amd64 /tini
 RUN chmod +x /tini
 ENTRYPOINT ["/tini", "--"]
 
